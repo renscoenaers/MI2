@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekenmachine</title>   
+    <style>
+        div {
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>
-        Rekenmachine
-    </h1>
-<script type="text/javascript">
-    
-  function Som(Getal1, Getal2)
-    {
-        return Getal1 + Getal2;    
-    }
+    <script type="text/javascript">
+        var canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 400;
+        var context = canvas.getContext('2d');
+        for (var x = 0; x < 10; x++)
+            for (var y = 0; y < 10; y++) {
+                context.fillStyle = (x + y) % 2 ? 'white' : 'black';
+                context.fillRect(40 * x, 40 * y, 40, 40)
+            }
+        document.body.appendChild(canvas);
+    </script>
 
-    function Aftrekken(Getal1, Getal2)
-    {
-        return Getal1 - Getal2;    
-    }
-
-    function Maal(Getal1, Getal2)
-    {
-        return Getal1 * Getal2;    
-    }
-
-    function Gedeeld(Getal1, Getal2)
-    {
-        return Getal1 / Getal2;    
-    }
-    
-</script>
 </body>
 </html>
