@@ -26,15 +26,15 @@
 
 <body>
 
-    <p>De priemgetallen</p>
+    <p>De priemgetallen: </p>
     <p id="priemgetallen"></p>
     <script type="text/javascript">
         "use strict";
         var priemgetallen = [];
 
-        for (var i = 2; i <= 100; i++) {
+        for (var i = 2; i <= 1000; i++) {
             var isPriem = true;
-            for (var j = 2; j <= 100; j++) {
+            for (var j = 2; j <= 1000; j++) {
                 if (i % j == 0 && i !== j)
                     isPriem = false;
             }
