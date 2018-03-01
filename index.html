@@ -12,25 +12,40 @@
             color: aliceblue;
             margin: 20%;
             padding: 5%;
-            border: thick double #f0f0f0;
+            border: thick double red;
+        }
+
+        #priemgetallen {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 70%;
         }
     </style>
 </head>
 
 <body>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $("#div1").fadeToggle();
-                $("#div2").fadeToggle("slow");
-                $("#div3").fadeToggle(3000);
-            });
-        });
+
+    <p>De priemgetallen</p>
+    <p id="priemgetallen"></p>
+    <script type="text/javascript">
+        "use strict";
+        var priemgetallen = [];
+
+        for (var i = 2; i <= 100; i++) {
+            var isPriem = true;
+            for (var j = 2; j <= 100; j++) {
+                if (i % j == 0 && i !== j)
+                    isPriem = false;
+            }
+            if (isPriem == true) {
+                priemgetallen[priemgetallen.length] = i;
+            }
+        }
+        for (var z = 0, len = priemgetallen.length; z < len; z++) {
+            document.getElementById("priemgetallen").innerHTML += priemgetallen[z] + ", " + "\n";
+        }
     </script>
-
-    <button>Click to summon Satan's square</button><br><br>
-    <div id="div1" style="width:25em;height:25em;margin-right:auto;margin-left:auto; display:block;background-color:red;border: thick dashed #363636;"></div><br>
-
 </body>
 
 </html>
